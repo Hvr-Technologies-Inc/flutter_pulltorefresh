@@ -5,8 +5,7 @@
  */
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart'
-    hide RefreshIndicator, RefreshIndicatorState;
+import 'package:flutter/material.dart' hide RefreshIndicator, RefreshIndicatorState;
 import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -62,10 +61,8 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                   if (mounted) setState(() {});
                 },
                 items: [
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.add), title: Text("二级刷新例子1")),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.border_clear), title: Text("二级刷新例子2"))
+                  BottomNavigationBarItem(icon: Icon(Icons.add), label: "二级刷新例子1"),
+                  BottomNavigationBarItem(icon: Icon(Icons.border_clear), label: "二级刷新例子1")
                 ],
               )
             : null,
@@ -174,8 +171,7 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                                   body: Text("二楼刷新"),
                                 )))
                         .whenComplete(() {
-                      _refreshController2.twoLevelComplete(
-                          duration: Duration(microseconds: 1));
+                      _refreshController2.twoLevelComplete(duration: Duration(microseconds: 1));
                     });
                   }
                 },
